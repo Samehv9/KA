@@ -1,0 +1,302 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: var(--secondary-color);
+}
+
+:root {
+    --primary-color: #0fd197;
+    --secondary-color: #1b1724;
+    --tertiary-color: #f2f2f2;
+}
+
+
+/* Start of Nav CSS */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.navbar .logo {
+    color: var(--primary-color);
+    margin: 0;
+    cursor: pointer;
+    font-family: "playwrite IN", serif;
+    transition: transform 0.5s ease, text-shadow 0.5s ease;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navbar .logo:hover {
+    text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color);
+    transform: scale(1.2);
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0 100px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar ul li {
+    padding: 15px 20px;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: transform 0.5s ease, text-shadow 0.5s ease;
+}
+
+.navbar ul li:hover {
+    text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color);
+    transform: scale(1.2);
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    color: #fff;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #fff;
+    transition: width 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color);
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+.navbar ul li a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color);
+}
+
+/* End of Nav CSS */
+
+
+.content {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+section {
+    min-width: 100vw;
+    padding: 60px;
+    box-sizing: border-box;
+}
+
+/* Start of Home CSS */
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+}
+
+#home .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+}
+
+#home .left {
+    text-align: left;
+}
+
+#home .left,
+#home .right {
+    width: 45%;
+}
+
+#home .counts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 60px;
+}
+
+#home .count {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home .number {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin: 5px;
+}
+
+#home .num-text {
+    text-align: left;
+    font-size: 18px;
+    color: #c7c4c4;
+}
+
+.count {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.count.visible {
+    opacity: 1;
+}
+
+#home .right,
+#home .left {
+    width: 30%;
+    margin: 100px 10%;
+}
+
+#home h4,
+#home h1 {
+    color: #fff;
+}
+
+#home .h1-name {
+    color: var(--primary-color);
+}
+
+#home .h1-name,
+#home h1 {
+    font-size: 40px;
+    margin: 0 5px;
+}
+
+#home h4 {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+#home p {
+    color: #c7c4c4;
+    font-size: 18px;
+}
+
+#home img {
+    border-radius: 50%;
+    margin-right: 50px;
+    width: 400px;
+    height: 400px;
+    transition: 0.5s ease;
+    animation: imgHover 2s ease infinite;
+}
+
+
+@keyframes imgHover {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 20px var(--primary-color), 0 0 40px var(--primary-color), 0 0 50px var(--primary-color);
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.buttons {
+    margin: 40px 0;
+}
+
+.buttons a {
+    margin: 10px;
+    padding: 15px;
+    color: var(--primary-color);
+    text-decoration: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    font-weight: bold;
+}
+
+.buttons .cv {
+    padding: 10px 30px;
+    border-radius: 40px;
+}
+
+.buttons a:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 25px var(--primary-color);
+
+}
+
+
+/* End of Home CSS */
+
+
+
+
+/* Start of Developer's section */
+
+footer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    padding: 9px;
+}
+
+footer img {
+    width: 35px;
+    margin: 5px;
+}
+
+footer p {
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: var(--tertiary-color);
+}
+
+/* End of Developer's section */
